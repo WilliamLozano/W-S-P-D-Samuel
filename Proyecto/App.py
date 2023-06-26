@@ -22,18 +22,17 @@ match persona:
         2. Ya tengo un Usuario
         """)
             opcion = input ("Que opcion desea realizar: ")
-            
             if opcion == "1":
                 nomPersona = str(input("Ingrese su nombre de Usuario. :"))
                 persona = Persona(nomPersona)
                 print("¡¡Persona creaada con exito!!")
 
             if opcion == "2":
-                nombrePersona = str(input("¿Cual es el nombre de su usuario.? : "))
+                nombrePersona = input("¿Cual es el nombre de su usuario.? : ")
                 for i in Persona.PersonasCreadas:
                     if nombrePersona == i.getNombre():
                         PersonaUso = i
-                        print(f"Bienvenido Persona: {i.getNombre()}")
+                        print(f"Bienvenido Persona: {PersonaUso.getNombre()}")
                         salir = False
 
                     salir = True
@@ -52,14 +51,14 @@ match persona:
                             print(persona.getDatosPersona())
                         
                         if opcion == "2":
-                            persona.setDatosPersona()
+                            persona.setDatosActualizados()
 
                         if opcion == "3":
                             print("Datos modificados:")
-                            print(persona.getDatosPersona())
+                            print(persona.getDatosActualizados())
 
                         if opcion == "4":
-                            print(persona.postularVacante)
+                            persona.postularVacante()
                         
                         if opcion == "5":
                             salir = False
