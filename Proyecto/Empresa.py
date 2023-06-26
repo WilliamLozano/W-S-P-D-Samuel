@@ -1,4 +1,8 @@
 from Usuario import *
+from ocupacion import *
+from ubicacion import *
+from vacante import *
+
 class Empresa (Usuario):
     empresasCreadas = []
     def __init__ (self,nombre):

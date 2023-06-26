@@ -12,24 +12,3 @@ class Ubicacion:
         Nombre de departamento: {self.__nombreDepartamento}
         Nombre de municipio: {self.__nombreMunicipio}"""
     
-    localisacion=input('''eliga una opcion entre 0 y 4 para editar el datos ')
-    0. codigoDepartamento
-    1. codigoMunicipio
-    2. nombreDepartamento
-    3. nombreMunicipio
-    4. salir
-    ''')
-
-
-    if  localisacion == '0':
-        print(int(input('escriba id: ')))
-    elif  localisacion =='1':
-        print(int(input('escriba la fecha de inscribcion: ')))
-    elif localisacion =='2':
-        print(str(input('escriba el cargo: ')))
-    elif localisacion =='3':
-        print(str(input('escriba la cantidad de candidatos que necesita: ')))
-    elif localisacion=='4':
-        salir=False 
-    else:
-        print('opcion no correspondida')

@@ -14,24 +14,4 @@ class Ocupacion:
         Cargo: {self.__cargo}
         Candidatos Requeridos: {self.__candidatosRequeridos}"""
     
-    ocupacion=input('''eliga una opcion entre 0 y 4 para editar el datos ')
-    0. id
-    1. fechaInscripcion
-    2. cargo
-    3. candidatosRequeridos
-    4. salir
-    ''')
 
-
-    if  ocupacion == '0':
-        print(int(input('escriba id: ')))
-    elif  ocupacion =='1':
-        print(int(input('escriba la fecha de inscribcion: ')))
-    elif ocupacion =='2':
-        print(str(input('escriba el cargo: ')))
-    elif ocupacion =='3':
-        print(str(input('escriba la cantidad de candidatos que necesita: ')))
-    elif ocupacion=='4':
-        salir=False 
-    else:
-        print('opcion no correspondida')
