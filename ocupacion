@@ -1,0 +1,27 @@
+lass ocupacion:
+    def __init__ (self, id, fecha_inscribcion, cargo, candidatos):
+        self.__id=id
+        self.__fecha_inscribcion=fecha_inscribcion
+        self.__cargo=cargo
+        self.__candidato=candidatos 
+        
+    def menu(self):
+            print("0. id")
+            print("1. fecha_inscribcion")
+            print("2. cargo")
+            print("3. candidatos")
+
+    seleccionar=input('elegir un numro entre 0 y 4: ')
+
+    if seleccionar == 0:
+        print('id',10)
+    elif seleccionar =='1':
+        print('fecha_inscribcion', 12/2/2002)
+    elif seleccionar =='2':
+        print('cargo' , 'jefe')
+    elif seleccionar =='3':
+        print('candidato', 'jorgenitales')
+    elif seleccionar =='4':
+        print()
+    else:
+        print('opcion no correspondida')

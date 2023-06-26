@@ -1,0 +1,35 @@
+class Ubicacion:
+    def __init__ (self):
+        self.__codigoDepartamento = int(input("Ingrese el codigo del departamento: "))
+        self.__codigoMunicipio = int(input("Ingrese el codigo del municipio: "))
+        self.__nombreDepartamento = input("Ingrese el nombre del departamento: ")
+        self.__nombreMunicipio = input("Ingrese el nombre del municipio: ")
+
+    def getDatosUbicacion (self):
+        return f"""Los datos de la ubicacion son:
+        Codigo de departamento: {self.__codigoDepartamento}
+        Codigo de municipio: {self.__codigoMunicipio}
+        Nombre de departamento: {self.__nombreDepartamento}
+        Nombre de municipio: {self.__nombreMunicipio}"""
+    
+    localisacion=input('''eliga una opcion entre 0 y 4 para editar el datos ')
+    0. codigoDepartamento
+    1. codigoMunicipio
+    2. nombreDepartamento
+    3. nombreMunicipio
+    4. salir
+    ''')
+
+
+    if  localisacion == '0':
+        print(int(input('escriba id: ')))
+    elif  localisacion =='1':
+        print(int(input('escriba la fecha de inscribcion: ')))
+    elif localisacion =='2':
+        print(str(input('escriba el cargo: ')))
+    elif localisacion =='3':
+        print(str(input('escriba la cantidad de candidatos que necesita: ')))
+    elif localisacion=='4':
+        salir=False 
+    else:
+        print('opcion no correspondida')

@@ -1,0 +1,27 @@
+class ubicacion:
+    def __init__(self,cod_departamento,cod_municipio,nombre_departamento,nombre_municipio):
+        self.__cod_departamento=cod_departamento
+        self.__cod_municipio=cod_municipio
+        self.__nombre_departamento=nombre_departamento
+        self.__nombre_municipio=nombre_municipio
+
+    def menu1(self):
+            print("0. cod_departamento")
+            print("1. cod_municipio")
+            print("2. nombre_departamento")
+            print("3. nombre_municipio")
+
+    elegir=input('elegir un numro entre 0 y 4: ')
+
+    if elegir == '0':
+        print('cod_departamento',2500)
+    elif elegir =='1':
+        print('cod_municipio', 25)
+    elif elegir =='2':
+        print('nombre_departamento' , 'soacha')
+    elif elegir =='3':
+        print('nombre_municipio', 'cundinamarca')
+    elif elegir=='4':
+        print()
+    else:
+        print('opcion no correspondida')
