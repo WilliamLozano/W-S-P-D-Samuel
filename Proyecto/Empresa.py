@@ -2,6 +2,7 @@ from Usuario import *
 from ocupacion import *
 from ubicacion import *
 from vacante import *
+from oferta import *
 
 class Empresa (Usuario):
     empresasCreadas = []
@@ -17,6 +18,7 @@ class Empresa (Usuario):
         self.__empresaOcupacion = []
         self.__empresaUbicacion = []
         self.__empresaVacante = []
+        self.__empresaOferta = []
         
     
     def getNombre(self):
@@ -61,3 +63,11 @@ Direccion: {self.__direccion}"""
     def getListVacante (self):
         for i in self.__empresaVacante:
             print (i.getDatosVacantes())
+    
+    def agregarOferta (self,oferta):
+        self.__empresaOferta.append(oferta)
+    
+    def getListOferta (self):
+        for i in self.__empresaOferta:
+            print (i.GetDatosOferta())
+        

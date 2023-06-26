@@ -3,6 +3,7 @@ from Empresa import *
 from ubicacion import *
 from ocupacion import *
 from vacante import *
+from oferta import *
 
 print ("""Seleccione segun el numero\n
 1. Persona
@@ -33,7 +34,7 @@ match usuario:
                 for i in Empresa.empresasCreadas:
                     if idEmpresa == i.getId():
                         empresaUso = i 
-                        print (f"Bienvenido empresa")
+                        print (f"Bienvenido empresa: {i.getNombre()}")
                         salir = False 
                     
                     salir = True
@@ -46,7 +47,9 @@ match usuario:
                         5. Ver datos de la ubicacion
                         6. Crear una vacante
                         7. Ver datos vacante
-                        11. Salir
+                        8. Crear una oferta
+                        9. Ver datos oferta
+                        10. Salir
                         """) 
                         opcion = input("Que opcion desea realizar: ")
 
@@ -68,11 +71,18 @@ match usuario:
                             empresa.getListUbicacion()
 
                         if opcion == "6":
-                            vac = Vacante ()
+                            vac = Vacante()
                             empresa.agregarVacante(vac)
 
                         if opcion == "7":
                             empresa.getListVacante()
+                        
+                        if opcion == "8":
+                            ofe = Oferta()
+                            empresa.agregarOferta(ofe)
+                        
+                        if opcion == "9":
+                            empresa.getListOferta()
 
-                        if opcion == "11":
+                        if opcion == "10":
                             salir = False
