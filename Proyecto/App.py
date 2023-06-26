@@ -4,17 +4,66 @@ from ubicacion import *
 from ocupacion import *
 from vacante import *
 from oferta import *
+from Persona import *
 
 print ("""Seleccione segun el numero\n
 1. Persona
 2. Empresa
 """)
 
-usuario = input("Que tipo de usuario es: ")
+persona = input("Que tipo de usuario es: ")
 
-match usuario:
+match persona:
     case "1":
-        print ("persona")
+        salir = True
+        while salir:
+            print ("""\nOpciones que puede hacer como Usuario:
+        1. Crear un usuario
+        2. Ya tengo un Usuario
+        """)
+            opcion = input ("Que opcion desea realizar: ")
+            
+            if opcion == "1":
+                nomPersona = str(input("Ingrese su nombre de Usuario. :"))
+                persona = Persona(nomPersona)
+                print("¡¡Persona creaada con exito!!")
+
+            if opcion == "2":
+                nombrePersona = str(input("¿Cual es el nombre de su usuario.? : "))
+                for i in Persona.PersonasCreadas:
+                    if nombrePersona == i.getNombre():
+                        PersonaUso = i
+                        print(f"Bienvenido Persona: {i.getNombre()}")
+                        salir = False
+
+                    salir = True
+                    while salir:
+                        print ("""\nEstas son las opciones que puede hacer ya que creo un Usuario:
+                        1. Ver datos de su Usuario
+                        2. Cambiar los datos de su Usuario
+                        3. Ver datos modificados
+                        4. Postularse a una vacante
+                        5. Salir
+                        """)
+
+                        opcion = input("¿Que opción desea realizar.? : ")
+
+                        if opcion == "1":
+                            print(persona.getDatosPersona())
+                        
+                        if opcion == "2":
+                            persona.setDatosPersona()
+
+                        if opcion == "3":
+                            print("Datos modificados:")
+                            print(persona.getDatosPersona())
+
+                        if opcion == "4":
+                            print(persona.postularVacante)
+                        
+                        if opcion == "5":
+                            salir = False
+
     case  "2":
         salir = True
         while salir:
