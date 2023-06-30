@@ -1,8 +1,8 @@
 from Usuario import *
-from ocupacion import *
-from ubicacion import *
-from vacante import *
-from oferta import *
+from Ocupacion import *
+from Ubicacion import *
+from Vacante import *
+from Oferta import *
 
 class Empresa (Usuario):
     empresasCreadas = []
@@ -14,11 +14,10 @@ class Empresa (Usuario):
         self.__correo = input("Ingrese su correo: ")
         self.__tipo = input ("Ingrese de que tipo es su empresa: ")
         self.__direccion = input ("Ingrese la direccion de su empresa: ")
+        self.__ocupacionEmpresa = ""
+        self.__ubicacionEmpresa = ""
+        self.__vacanteEmpresa = ""
         Empresa.empresasCreadas.append (self)
-        self.__empresaOcupacion = []
-        self.__empresaUbicacion = []
-        self.__empresaVacante = []
-        self.__empresaOferta = []
         
     
     def getNombre(self):
@@ -28,41 +27,23 @@ class Empresa (Usuario):
         return self.__id
     
     def getDatosEmpresa (self):
-        return f"""Sus datos como empresa {self.getNombre()} serian 
+        return f"""\nSus datos como empresa {self.getNombre()} serian 
+----------------------------
 Nombre: {self.getNombre()} 
 Id: {self.__id}
 Telefono: {self.__telefono}
 Descripcion: {self.__descripcion}
 Correo: {self.__correo}
 Tipo: {self.__tipo}
-Direccion: {self.__direccion}"""
+Direccion: {self.__direccion}
+-----------------------------
+"""
     
     def getEmpresasList (self):
         cont = 0
         for i in Empresa.empresasCreadas:
             cont = cont + 1 
-            print (f"{cont}: {i.getId()}")
-
-    def agregarOcupacion (self,ocupacion):
-        self.__empresaOcupacion.append(ocupacion)
-    
-    def getListOcupacion (self):
-        for i in self.__empresaOcupacion:
-            print (i.getDatosOcupacion())
-
-    def agregarUbicacion (self,ubicacion):
-        self.__empresaUbicacion.append(ubicacion)
-
-    def getListUbicacion (self):
-        for i in self.__empresaUbicacion:
-            print (i.getDatosUbicacion())
-    
-    def agregarVacante (self,vacante):
-        self.__empresaVacante.append(vacante)
-
-    def getListVacante (self):
-        for i in self.__empresaVacante:
-            print (i.getDatosVacantes())
+            print (f"{cont}. {i.getNombre()}")
     
     def agregarOferta (self,oferta):
         self.__empresaOferta.append(oferta)
@@ -70,4 +51,16 @@ Direccion: {self.__direccion}"""
     def getListOferta (self):
         for i in self.__empresaOferta:
             print (i.GetDatosOferta())
+
+    def agregarOcu (self,ocupacion):
+        self.__ocupacionEmpresa = ocupacion
+        return self.__ocupacionEmpresa
+    
+    def agregarUbi (self,ubicacion):
+        self.__ubicacionEmpresa = ubicacion
+        return self.__ubicacionEmpresa
+    
+    def agregarVac (self,vacante):
+        self.__vacanteEmpresa = vacante
+        return self.__vacanteEmpresa
         

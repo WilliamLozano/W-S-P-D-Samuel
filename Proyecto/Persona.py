@@ -1,5 +1,5 @@
 from Usuario import *
-from vacante import *
+from Vacante import *
 class Persona(Usuario):
     PersonasCreadas = []
     def __init__ (self, nombre):
