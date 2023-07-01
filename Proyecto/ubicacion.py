@@ -1,10 +1,13 @@
 class Ubicacion:
     ubicacionEmpresa = []
     def __init__ (self):
-        self.__codigoDepartamento = int(input("Ingrese el codigo del departamento: "))
-        self.__codigoMunicipio = int(input("Ingrese el codigo del municipio: "))
-        self.__nombreDepartamento = input("Ingrese el nombre del departamento: ")
-        self.__nombreMunicipio = input("Ingrese el nombre del municipio: ")
+        try:
+            self.__codigoDepartamento = int(input("Ingrese el codigo del departamento: "))
+            self.__codigoMunicipio = int(input("Ingrese el codigo del municipio: "))
+            self.__nombreDepartamento = input("Ingrese el nombre del departamento: ")
+            self.__nombreMunicipio = input("Ingrese el nombre del municipio: ")
+        except ValueError:
+            print ("Usted hizo una mala movida :3")
         Ubicacion.ubicacionEmpresa.append(self)
 
     def getCodiDepartament (self):
