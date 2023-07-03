@@ -1,6 +1,6 @@
 from Usuario import *
 from Vacante import *
-from Postulacion import *
+from Oferta import *
 class Persona(Usuario):
     PersonasCreadas = []
     def __init__ (self, nombre):
@@ -14,7 +14,7 @@ class Persona(Usuario):
         self.__estadoCivil = input("Su estado civil es: ")
         self.__libretaMilitar = input("Cuenta con libreta militar (SI/NO): ")
         self.__correo = input("Ingrese su correo electronico personal: ")
-        self.__postulacion = []
+        self.__postulaciones = []
         Persona.PersonasCreadas.append(self)
 
 
@@ -96,9 +96,23 @@ Correo: {self.__correo}
             cont = cont + 1 
             print (f"{cont}. {i.getNombre()}")
     
-    def postulacion (self,persona,oferta):
-        pos = Postulacion (self,persona,oferta)
-        self.__postulacion.append (pos)
+    def postularse (self,oferta):
+        pos = Postulacion (oferta)
+        self.__postulaciones.append(pos)
     
     def getListPostulacion (self):
-        return self.__postulacion
+        return self.__postulaciones
+
+class Postulacion:
+    def __init__ (self,oferta):
+        self.__oferta = oferta
+
+    def getPersona (self):
+        return self.__persona
+    
+    def getOferta (self):
+        return self.__oferta
+    
+    def getCodigo (self):
+        return self.__oferta.getIdOfert()
+    

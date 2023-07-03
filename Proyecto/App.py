@@ -5,7 +5,6 @@ from Ocupacion import *
 from Vacante import *
 from Oferta import *
 from Persona import *
-from Postulacion import *
 
 while True:
     print ("""\nSeleccione segun el numero\n
@@ -139,15 +138,15 @@ Fecha cierre: {i.getFechaCierre()}
                         if opcion == "4":
                             idOferta = int(input("Ingrese el id de la oferta a la que desea postularse: "))
                             for i in Oferta.ofertas:
-                                if idOferta == i.getIdOfert():
-                                    personaUso.postulacion(personaUso,i)
-                                    print ("¡¡Postulacion exitosa!!")
+                                if  i.getIdOfert() == idOferta:
+                                    personaUso.postularse(i)
+                                    print ("\n¡¡Postulacion exitosa!!")
 
                         if opcion == "5":
-                            for i in Persona.getListPostulacion():
+                            for i in personaUso.getListPostulacion():
                                 print (f"""
 -------------------------------
-Codigo {i.getIdOfert()}\n
+Codigo {i.getCodigo()}\n
 {i.getCargo()}
 {i.getSalario()}
 {i.getExperiencia()} de experiencia
