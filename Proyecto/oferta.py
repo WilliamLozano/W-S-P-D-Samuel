@@ -1,23 +1,53 @@
+from Vacante import *
+from Ocupacion import *
 class Oferta:
-    
+    ofertas = []
     def __init__(self):
-        self.Id = int(input("Ingrese su ID en el sistema. :"))
-        self.vacante = str(input("Ingrese la vacante al sistema. :")) 
-        self.numeropostulados = int(input("Ingrese el numero de postulados en el sistema. :"))
-        self.FechaPublicacion =(input("Ingrese la fecha de publicación de la oferta en el sistema. :"))
-        self.FechaCierre = (input("Ingrese la fecha de cierre de la oferta en el sistema. :"))
-        self.CandidatosaEntrevistar = int(input("Ingrese el numero de candidatos a entrevistar"))
-        self.Estado = str(input("Ingrese el estado de la oferta en el sistema. :"))
-        self.oferta = str(input("Ingrese la oferta en el sistema. :"))
+        try:
+            self.__id = int(input ("Ingrese el id de la oferta: "))
+            self.__numPostulados = 0
+            self.__fechaPublicacion = input ("Ingrese la fecha de publicación en la que publicara la oferta: ")
+            self.__fechaCierre = input ("Ingrese la fecha de cierre en la que desabilitara la oferta: ")
+            self.__vacante = ""
+        except:
+            print ("Usted hizo una mala movida :3")
+        Oferta.ofertas.append(self)
+        
 
-    def GetDatosOferta(self):
-
-        return f"""Los datos de la vacante son:
-        Id: {self.Id}
-        vacante: {self.vacante}
-        numero de postulados: {self.numeropostulados}
-        Fecha de publicacion: {self.FechaPublicacion}
-        Fecha de cierre: {self.FechaCierre}
-        Candidatos a entrevistar: {self.CandidatosaEntrevistar}
-        Estado: {self.Estado}
-        Oferta: {self.oferta} """
+    def getIdOfert (self):
+        return self.__id
+    
+    def getNumPostulados (self):
+        return self.__numPostulados
+    
+    def getFechaPublic (self):
+        return self.__fechaPublicacion
+    
+    def getFechaCierre (self):
+        return self.__fechaCierre
+    
+    def agregarVacante (self,vacante):
+        instancia = vacante
+        self.__vacante = instancia
+        return self.__vacante
+    
+    def getCargo (self):
+        return self.__vacante.getNomOcupacion()
+    
+    def getSalario (self):
+        return self.__vacante.getSalario()
+    
+    def getExperiencia (self):
+        return self.__vacante.getExperiencia()
+    
+    def getTipoContrato (self):
+        return self.__vacante.getTipoContrato()
+    
+    def getNomDepartamento (self):
+        return self.__vacante.getNomDepa()
+    
+    def getNomMunicipio (self):
+        return self.__vacante.getNomMuni()
+    
+    def getNumVacantes (self):
+        return self.__vacante.getNumVacantes()
