@@ -1,9 +1,9 @@
 from Usuario import *
 from Empresa import *
-from Ubicacion import *
-from Ocupacion import *
-from Vacante import *
-from Oferta import *
+from ubicacion import *
+from ocupacion import *
+from vacante import *
+from oferta import *
 from Persona import *
 
 while True:
@@ -197,7 +197,7 @@ Codigo {i.getCodigo()}\n
 
                         if opcion == "2":
                             print ("\nOCUPACION\n")
-                            ocu = Ocupacion ()
+                            ocu = ocupacion ()
 
                             print ("\nOCUPACION\n")
                             ubi = Ubicacion ()

@@ -1,6 +1,6 @@
 from Usuario import *
-from Vacante import *
-from Oferta import *
+from vacante import *
+from oferta import *
 class Persona(Usuario):
     PersonasCreadas = []
     def __init__ (self, nombre):

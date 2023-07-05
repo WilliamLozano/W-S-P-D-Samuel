@@ -1,8 +1,8 @@
 from Usuario import *
-from Ocupacion import *
-from Ubicacion import *
-from Vacante import *
-from Oferta import *
+from ocupacion import *
+from ubicacion import *
+from vacante import *
+from oferta import *
 
 class Empresa (Usuario):
     empresasCreadas = []

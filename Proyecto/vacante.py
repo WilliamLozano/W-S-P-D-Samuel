@@ -1,5 +1,5 @@
-from Ocupacion import *
-from Ubicacion import *
+from ocupacion import *
+from ubicacion import *
 class Vacante ():
     def __init__ (self):
         try: 

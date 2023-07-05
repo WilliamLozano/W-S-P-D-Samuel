@@ -1,4 +1,4 @@
-class Ocupacion:
+class ocupacion:
     ocupacionEmpresa = []
     def __init__ (self):
         try:
@@ -8,7 +8,7 @@ class Ocupacion:
             self.__candidatosRequeridos = int(input("Ingrese la cantidad de candidatos que necesita: "))
         except:
             print ("Usted hizo una mala movida :3")
-        Ocupacion.ocupacionEmpresa.append(self)
+        ocupacion.ocupacionEmpresa.append(self)
 
     def getIdOcu (self):
         return self.__id

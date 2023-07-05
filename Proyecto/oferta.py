@@ -1,5 +1,5 @@
-from Vacante import *
-from Ocupacion import *
+from vacante import *
+from ocupacion import *
 class Oferta:
     ofertas = []
     def __init__(self):
