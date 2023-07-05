@@ -116,3 +116,13 @@ class Postulacion:
     def getCodigo (self):
         return self.__oferta.getIdOfert()
     
+    def getCargoPost (self):
+        return self.__oferta.getCargo()
+    
+    def getSalarioPost (self):
+        return self.__oferta.getSalario()
+
+    def getExperiencia (self):
+        return self.__oferta.getExperiencia()
+
+    

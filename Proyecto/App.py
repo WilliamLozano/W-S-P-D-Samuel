@@ -145,18 +145,10 @@ Fecha cierre: {i.getFechaCierre()}
                         if opcion == "5":
                             for i in personaUso.getListPostulacion():
                                 print (f"""
--------------------------------
+-----------------------
 Codigo {i.getCodigo()}\n
-{i.getCargo()}
-{i.getSalario()}
-{i.getExperiencia()} de experiencia
-Tipo de contrato: {i.getTipoContrato()}
-{i.getNomDepartamento()},{i.getNomMunicipio()}
-Vacantes: {i.getNumVacantes()}
-Postulados: {i.getNumPostulados()}
-Fecha publicacion: {i.getFechaPublic()}
-Fecha cierre: {i.getFechaCierre()}
--------------------------------""")
+{i.getCargoPost()}
+-----------------------""")
                                 
                         if opcion == "6":
                             break
